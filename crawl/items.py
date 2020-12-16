@@ -31,9 +31,9 @@ class ProductItem(Item):
     product_url = scrapy.Field()
     name = scrapy.Field()
     discount = scrapy.Field()
-    discounted_price = scrapy.Field()
-    original_price = scrapy.Field()
-    rating = scrapy.Field()
+    discounted_price = scrapy.Field(input_processor=MapCompose(float))
+    original_price = scrapy.Field(input_processor=MapCompose(float))
+    rating = scrapy.Field(input_processor=MapCompose(int))
     product_info = scrapy.Field()
 
 
